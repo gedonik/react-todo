@@ -1,19 +1,16 @@
 import React from 'react';
+import TaskItem from "./TaskItem";
 
-const List = ({list}) => {
-    console.log(list);
-
+const TaskList = ({list, remove, isCompleted}) => {
     return (
         <ul className="max-w-sm m-auto">
             {list.map((item) => {
                 return (
-                    <li className="p-2 border mb-2" key={item.id}>
-                        {item.text}
-                    </li>
+                    <TaskItem item={item} key={item.id} isCompleted={isCompleted} remove={remove} />
                 )
             })}
         </ul>
     );
 };
 
-export default List;
+export default TaskList;
